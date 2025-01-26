@@ -1,0 +1,12 @@
+--- oscam.c
++++ oscam.c
+@@ -1865,6 +1874,9 @@ int32_t main(int32_t argc, char *argv[])
+ 	init_readerdb();
+ #ifdef MODULE_STREAMRELAY
+ 	init_stream_server();
++#endif
++#ifdef WITH_EMU
++	add_emu_reader();
+ #endif
+ 	cfg.account = init_userdb();
+ 	init_signal();
